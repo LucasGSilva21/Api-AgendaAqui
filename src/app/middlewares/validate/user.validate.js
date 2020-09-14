@@ -19,10 +19,12 @@ export default {
             roleId: Yup.number().required(),
         });
       
-        if (!(await schema.isValid(req.body))) {
-            return res.status(400).json({ error: 'Validation fails' });
-        }else{ 
+        try {
+            await schema.validate(req.body);
+      
             next();
+        } catch (e) {
+            res.status(400).json({ error: e.message });
         }
     },
     update: async (req, res, next) => {
@@ -32,10 +34,12 @@ export default {
             roleId: Yup.number(),
         });
       
-        if (!(await schema.isValid(req.body))) {
-            return res.status(400).json({ error: 'Validation fails' });
-        }else{ 
+        try {
+            await schema.validate(req.body);
+      
             next();
+        } catch (e) {
+            res.status(400).json({ error: e.message });
         }
     },
     updatePassword: async (req, res, next) => {
@@ -44,10 +48,12 @@ export default {
             password: Yup.string().min(6).required(),
         });
       
-        if (!(await schema.isValid(req.body))) {
-            return res.status(400).json({ error: 'Validation fails' });
-        }else{ 
+        try {
+            await schema.validate(req.body);
+      
             next();
+        } catch (e) {
+            res.status(400).json({ error: e.message });
         }
     }
 }
