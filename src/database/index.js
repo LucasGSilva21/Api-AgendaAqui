@@ -2,12 +2,13 @@ import Sequelize from 'sequelize';
 
 import Role from '../app/models/Role';
 import User from '../app/models/User';
+import Customer from '../app/models/Customer';
 
 const env = process.env.NODE_ENV || 'development';
 
 const config = require('../config/database.js')[env];
 
-const models = [Role, User];
+const models = [Role, User, Customer];
 
 class Database {
 
