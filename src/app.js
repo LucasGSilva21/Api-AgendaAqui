@@ -6,6 +6,7 @@ import roleRoutes from './routes/role.routes';
 import userRoutes from './routes/user.routes';
 import sessionRoutes from './routes/session.routes';
 import customerRoutes from './routes/customer.routes';
+import appointmentRoutes from './routes/appointment.routes';
 
 import './database';
 
@@ -27,6 +28,7 @@ class App {
     this.server.use(userRoutes);
     this.server.use(sessionRoutes);
     this.server.use(customerRoutes);
+    this.server.use(appointmentRoutes);
   }
 }
 

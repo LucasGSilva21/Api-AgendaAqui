@@ -44,8 +44,8 @@ class CustomerController {
   }
 
   async delete(req, res) {
-    const user = await Customer.findByPk(req.params.userId);
-    await user.destroy({ force: true });
+    const customer = await Customer.findByPk(req.params.customerId);
+    await customer.destroy({ force: true });
 
     return res.send();
   }
