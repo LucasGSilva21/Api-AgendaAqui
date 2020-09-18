@@ -57,6 +57,25 @@ class Appointment extends Model {
 
     return appointments;
   }
+
+  static async getAllUser(userid){
+    const appointments = await this.findAll({
+      where: { userId: userid },
+      attributes: ['id','date', 'description'],
+      include: [
+        {
+          model: User,
+          as: 'user'
+        },
+        {
+          model: Customer,
+          as: 'customer',
+        },
+      ],
+    });
+
+    return appointments;
+  }
 }
 
 export default Appointment;

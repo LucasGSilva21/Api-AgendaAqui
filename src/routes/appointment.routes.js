@@ -10,5 +10,6 @@ routes.get('/appointments/:appointmentId', authMiddleware, appointmentValidate.e
 routes.get('/appointments', authMiddleware, AppointmentController.getAll);
 routes.put('/appointments/:appointmentId', authMiddleware, appointmentValidate.exists, appointmentValidate.update, AppointmentController.update);
 routes.delete('/appointments/:appointmentId', authMiddleware, appointmentValidate.exists, AppointmentController.delete);
+routes.get('/appointments/user/:userId', authMiddleware, AppointmentController.getAllUser);
 
 export default routes;

@@ -13,6 +13,12 @@ class CustomerController {
     return res.json(appointments);
   }
 
+  async getAllUser(req, res) {
+    const appointments = await Appointment.getAllUser(req.params.userId);
+
+    return res.json(appointments);
+  }
+
   async store(req, res) {
     const { id, date, description, userId, customerId } = await Appointment.create(req.body);
     
