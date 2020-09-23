@@ -28,11 +28,13 @@ class Appointment extends Model {
       include: [
         {
           model: User,
-          as: 'user'
+          as: 'user',
+          attributes: ['id','name','email'],
         },
         {
           model: Customer,
           as: 'customer',
+          attributes: ['id','name','email', 'description'],
         },
       ],
     });
@@ -46,11 +48,13 @@ class Appointment extends Model {
       include: [
         {
           model: User,
-          as: 'user'
+          as: 'user',
+          attributes: ['id','name','email'],
         },
         {
           model: Customer,
           as: 'customer',
+          attributes: ['id','name','email', 'description'],
         },
       ],
     });
@@ -65,11 +69,13 @@ class Appointment extends Model {
       include: [
         {
           model: User,
-          as: 'user'
+          as: 'user',
+          attributes: ['id','name','email'],
         },
         {
           model: Customer,
           as: 'customer',
+          attributes: ['id','name','email', 'description'],
         },
       ],
     });
